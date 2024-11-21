@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Personal Finance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Validate password input
+        function validateLogin(event) {
+            event.preventDefault();
+            const password = document.getElementById('password').value;
+            if (password === 'Error404') {
+                window.location.href = 'index.html';  // Redirect to homepage on successful login
+            } else {
+                document.getElementById('error-message').classList.remove('hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>💼 Finance Tracker Login</h1>
+            <form id="login-form" onsubmit="validateLogin(event)">
+                <div class="input-field">
+                    <h3>Password</h3>
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                </div>
+                <button type="submit" class="btn login-btn">Login</button>
+                <div class="error-message hidden" id="error-message">Incorrect Password. Try again!</div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
