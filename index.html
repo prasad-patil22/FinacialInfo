@@ -17,32 +17,33 @@
         <div class="form-section">
             <h2>Add Income/Expense</h2>
             <form id="transaction-form">
-                <input type="text" id="description" placeholder="Enter Description" required>
-                <input type="number" id="amount" placeholder="Enter Amount" required>
-                <select id="category">
+                <input type="text" id="description" placeholder="Enter Description" required><br>
+                <input type="number" id="amount" placeholder="Enter Amount" required><br>
+                <select id="category"><br>
                     <option value="income">Income</option>
                     <option value="food">Food</option>
                     <option value="rent">Rent</option>
                     <option value="entertainment">Entertainment</option>
                     <option value="other">Other</option>
-                </select>
-                <button type="submit" class="btn">Add Transaction</button>
+                </select><br>
+                <!-- Green full-width transaction button -->
+                <button type="submit" class="btn primary-btn">Add Transaction</button><br>
             </form>
         </div>
 
-        <!-- Transactions List -->
-        <div class="transactions-section">
-            <h2>Transactions</h2>
-            <ul id="transaction-list"></ul>
+        <!-- Control Buttons -->
+        <div class="control-section">
+            <button onclick="navigateTo('transactions.html')" class="btn secondary">Show Transactions</button><br>
+            <button onclick="navigateTo('graph.html')" class="btn secondary">Show Line Graph</button><br>
         </div>
 
         <!-- Expense Summary -->
         <div class="summary-section">
             <h2>Summary</h2>
             <div class="summary-box">
-                <p>Total Income: <span id="total-income">$0</span></p>
-                <p>Total Expenses: <span id="total-expenses">$0</span></p>
-                <p>Balance: <span id="balance">$0</span></p>
+                <p>Total Income: <span id="total-income">₹0</span></p><br>
+                <p>Total Expenses: <span id="total-expenses">₹0</span></p><br>
+                <p>Balance: <span id="balance">₹0</span></p>
             </div>
         </div>
     </div>
