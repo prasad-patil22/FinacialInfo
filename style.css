@@ -33,6 +33,7 @@ header h1 {
     margin-bottom: 20px;
 }
 
+
 /* Form Section */
 .form-section {
     margin-bottom: 20px;
@@ -49,36 +50,48 @@ input, select {
     border: none;
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.1);
-    color: #fff; /* Ensure text color is white for visibility */
-    transition: all 0.3s ease;
+    color: #fff;
     font-size: 1rem;
 }
 
-/* Ensure dropdown options are visible */
-select option {
-    background-color: #2c3e50; /* Dark background for dropdown options */
-    color: #fff; /* White text for better visibility */
-}
-
-/* Input and Select Focus */
-input:focus, select:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-}
-
+/* Button Styling */
 .btn {
-    background-color: #27ae60;
-    color: #fff;
     padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.3s;
+    font-size: 1rem;
+    transition: transform 0.3s, background-color 0.3s;
+    margin-bottom: 15px;
 }
 
-.btn:hover {
-    transform: scale(1.05);
+/* Green Button (Full Width) */
+.primary-btn {
+    background-color: #27ae60;
+    color: #fff;
+    width: 100%; /* Full width */
+}
+
+.primary-btn:hover {
+    background-color: #2ecc71; /* Darker Green on Hover */
+}
+
+/* Secondary Buttons (Centered) */
+.secondary {
+    background-color: #3498db;
+    color: white;
+    width: 45%; /* Adjusted width */
+    display: inline-block;
+    margin: 10px 2.5%;
+}
+
+.secondary:hover {
+    background-color: #2980b9; /* Darker Blue */
+}
+
+/* Control Section for buttons */
+.control-section {
+    text-align: center;
 }
 
 /* Transactions Section */
@@ -98,11 +111,6 @@ ul li {
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
-    animation: slideIn 0.5s ease;
-}
-
-ul li span {
-    font-weight: bold;
 }
 
 /* Summary Section */
@@ -112,34 +120,142 @@ ul li span {
 
 .summary-box {
     background: rgba(255, 255, 255, 0.2);
-    padding: 20px;
+    padding: 20
+}   
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(135deg, #7f8c8d, #2c3e50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Login Box Styling */
+.login-box {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
     border-radius: 10px;
-    margin-top: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
 }
 
-.summary-box p {
+/* Heading Styling */
+h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Input Field and Button Styling */
+.input-field, .btn {
+    width: 100%;  /* Ensure both input field and button take the same full width */
+}
+
+input {
+    padding: 15px;
+    width: 100%; /* Match button width */
+    border-radius: 5px;
+    border: 1px solid #3498db;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 15px; /* Add margin to create spacing between input and button */
+}
+
+input:focus {
+    border-color: #2ecc71;
+    outline: none;
+}
+
+/* Button Styling */
+.btn {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.login-btn {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.login-btn:hover {
+    background-color: #2ecc71;
+    transform: scale(1.05);
+}
+
+/* Error Message Styling */
+.error-message {
+    color: red;
+    font-size: 1rem;
+    margin-top: 10px;
+    display: none;
+}
+
+.error-message.hidden {
+    display: none;
+}
+
+/* Show error message when password is incorrect */
+.error-message:not(.hidden) {
+    display: block;
+}
+
+
+/* Delete Button Styling */
+.delete-btn {
+    padding: 5px 10px;  /* Reduced padding for a smaller button */
+    font-size: 0.8rem;   /* Smaller font size */
+    border: none;
+    border-radius: 5px;
+    background-color: #e74c3c; /* Red background for delete action */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 80px; /* Set a fixed width for a smaller button */
+    text-align: center; /* Ensure text is centered */
+}
+
+.delete-btn:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    transform: scale(1.05);
+}
+
+/* Transaction list item styling */
+ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
     margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+ul li button {
+    margin-left: 10px; /* Add space between transaction text and delete button */
 }
